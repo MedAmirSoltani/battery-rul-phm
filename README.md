@@ -48,8 +48,20 @@ The model captures **90% of RUL variance** trained in only 7 epochs.
 ## Dataset
 
 - **Source:** [Kaggle — Battery Remaining Useful Life (RUL)](https://www.kaggle.com/datasets/ignaciovinuales/battery-remaining-useful-life-rul)
+- **Size:** 15 064 rows × 9 columns
 - **Features:** Discharge time, voltage, current, charging behavior metrics
 - **Target:** RUL — remaining cycles before end of life
+
+---
+
+## Project Structure
+```
+battery-rul-phm/
+├── Battery_RUL.csv        # Dataset
+├── notebook.ipynb         # Full PHM pipeline
+├── requirements.txt       # Dependencies
+└── README.md
+```
 
 ---
 
@@ -78,12 +90,15 @@ jupyter
 
 ## Link to AEM Electrolyzers
 
-This pipeline mirrors the PHM objectives for AEM stacks:
+The PHM logic applied here is directly transposable to AEM electrolyzer stacks :
 
-- **Health Indicators** → cell voltage decay, temperature gradients, pressure
-- **Degradation modeling** → same LSTM architecture, retrained on stack data
-- **Online prognostics** → deployable in industrial supervision systems
-- **EIS/DRT integration** → additional diagnostic features for AEM-specific degradation
+- Battery degradation signals (voltage, discharge time, charging behavior)
+  share the same temporal dynamics as stack indicators
+  (cell voltage, temperature, pressure)
+- The LSTM architecture can be retrained on GEN-HY supervision data
+  to predict stack RUL in real time
+- EIS/DRT diagnostics could be integrated as additional input features
+  to capture AEM-specific degradation mechanisms
 
 ---
 
