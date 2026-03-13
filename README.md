@@ -95,8 +95,7 @@ The PHM logic applied here is directly transposable to AEM electrolyzer stacks :
 - Battery degradation signals (voltage, discharge time, charging behavior)
   share the same temporal dynamics as stack indicators
   (cell voltage, temperature, pressure)
-- The LSTM architecture can be retrained on GEN-HY supervision data
-  to predict stack RUL in real time
+- The LSTM architecture can be retrained to predict stack RUL in real time
 - EIS/DRT diagnostics could be integrated as additional input features
   to capture AEM-specific degradation mechanisms
 
